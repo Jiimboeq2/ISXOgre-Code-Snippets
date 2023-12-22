@@ -41,8 +41,9 @@ If you haven't created a full extension, you can try adding your snippets to the
 Reload VS Code
 Sometimes, after making changes to the snippets file or settings, you need to reload VS Code. You can do this by closing and reopening the application, or pressing Ctrl+Shift+P (or Cmd+Shift+P on Mac) and typing 'Reload Window'.
 
+
 Testing the Snippet
-When testing, type the prefix of your snippet in the .iss file and press Tab. If the snippet is recognized, it should expand.
+When testing, type the prefix of your snippet in the .iss file and press Tab. If the snippet is recognized, it should expand. -- please use PR's before merging to master 
 
 Checking for Conflicts
 Ensure there are no conflicts with other extensions or settings that might interfere with the functioning of snippets.
