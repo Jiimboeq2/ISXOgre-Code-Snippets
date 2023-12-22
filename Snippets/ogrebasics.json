@@ -1,0 +1,125 @@
+{
+  "DoTarget Actor": {
+    "prefix": "dotarget",
+    "body": ["Actor[]:DoTarget"],
+    "description": "Triggers DoTarget command on Actor."
+  },
+  "Wait Command": {
+    "prefix": "waitcmd",
+    "body": ["wait 10"],
+    "description": "Wait for 10 units of time."
+  },
+  "DoubleClick Actor": {
+    "prefix": "doubleclick",
+    "body": ["Actor[]:DoubleClick"],
+    "description": "Triggers a DoubleClick on Actor."
+  },
+  "Buy from Vendor": {
+    "prefix": "buyvendor",
+    "body": ["Vendor.Merchant[]:Buy[1]"],
+    "description": "Initiate a buy command from a Vendor."
+  },
+  "Close Top Window Command": {
+    "prefix": "closetopwindow",
+    "body": ["EQ2Execute /close_top_window"],
+    "description": "Executes command to close the top window."
+  },
+  "Check In Combat": {
+    "prefix": "checkcombat",
+    "body": ["while ${Me.InCombat}==TRUE"],
+    "description": "Check if in combat."
+  },
+  "OgreBot Command True": {
+    "prefix": "ogrebottrue",
+    "body": ["OgreBotAtom aExecuteAtom ${Me.Name} a_QueueCommand ChangeCastStackListBoxItem \"\"  TRUE TRUE"],
+    "description": "OgreBot command execution with TRUE flag."
+  },
+  "OgreBot Command False": {
+    "prefix": "ogrebotfalse",
+    "body": ["OgreBotAtom aExecuteAtom ${Me.Name} a_QueueCommand ChangeCastStackListBoxItem \"\"  FALSE FALSE"],
+    "description": "OgreBot command execution with FALSE flag."
+  },
+  "Determine Zone Named": {
+    "prefix": "determinezone",
+    "body": [
+      "if ${_StartingPoint} == ",
+      "{",
+      "\tcall This.Named1 \"\"",
+      "\tif !${Return}",
+      "\t{",
+      "\t\tObj_OgreIH:Message_FailedZone[\"#1: \"]",
+      "\t\treturn FALSE",
+      "\t}",
+      "\tcall Obj_OgreIH.Get_Chest",
+      "\t_StartingPoint:Inc",
+      "}"
+    ],
+    "description": "Determine which named entity you should be on in a zone."
+  },
+  "Move To Next Waypoint": {
+    "prefix": "movetonextwaypoint",
+    "body": ["call move_to_next_waypoint \"\""],
+    "description": "Moves to the next waypoint."
+  },
+  "Use Item Special Command": {
+    "prefix": "useitemspecial",
+    "body": ["oc !ci -UseItem igw:${Me.Name}+fighter \"\""],
+    "description": "Executes a special use item command."
+  },
+  "Execute Special Command": {
+    "prefix": "executespecial",
+    "body": ["oc !ci -special igw:${Me.Name}"],
+    "description": "Executes a special command."
+  },
+  "Atom Atexit": {
+    "prefix": "atomatexit",
+    "body": [
+      "atom atexit()",
+      "{",
+      "\techo ${Time}: ${Script.Filename} done",
+      "}"
+    ],
+    "description": "Defines an atom atexit function."
+  },
+  "Atom Example1": {
+    "prefix": "atomexample1",
+    "body": [
+      "atom example1(string Text)",
+      "{",
+      "\tif ${Text.Find[\"mob announce here\"](exists)}",
+      "\t{",
+      "\t\tcall function",
+      "\t}",
+      "\tif ${Text.Find[\"mob announce here\"](exists)}",
+      "\t{",
+      "\t\tcall function here",
+      "\t}",
+      "}"
+    ],
+    "description": "Defines an atom example1 function."
+  },
+  "Atom Curecurse": {
+    "prefix": "atomcurecurse",
+    "body": [
+      "atom Curecurse(string Text)",
+      "{",
+      "\tif ${Text.Find[\"text here\"](exists)}",
+      "\t{",
+      "\t\toc !ci -ChangeOgreBotUIOption igw:${Me.Name} checkbox_settings_disablecaststack_cure TRUE TRUE",
+      "\t\tExample_NoCure:Set[TRUE]",
+      "\t}",
+      "}"
+    ],
+    "description": "Defines an atom Curecurse function."
+  },
+  "Attach Atom Example1": {
+    "prefix": "attachatomexample1",
+    "body": ["Event[EQ2_onIncomingText]:AttachAtom[example1]"],
+    "description": "Attaches the atom example1 to an EQ2 event."
+  },
+  "Change Camp Spot": {
+    "prefix": "changecampspot",
+    "body": ["Obj_OgreIH:ChangeCampSpot[\" \"]"],
+    "description": "Changes the camp spot."
+  }
+}
